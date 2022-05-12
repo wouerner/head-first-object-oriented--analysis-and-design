@@ -1,17 +1,17 @@
-<?php 
+<?php
 namespace Wouerner\RicksGuitars;
 
-class Guitar
+final class Guitar
 {
-    private $serialNumber;
-    private $builder;
-    private $model;
-    private $type;
-    private $backWood;
-    private $topWood;
-    private $price;
+    private string $serialNumber;
+    private string $builder;
+    private string $model;
+    private string $type;
+    private string $backWood;
+    private string $topWood;
+    private string $price;
 
-    function  __construct($serialNumber, $price, $builder, $model, $type, $backWood, $topWood)
+    function __construct($serialNumber, $price, $builder, $model, $type, $backWood, $topWood)
     {
         $this->serialNumber = $serialNumber;
         $this->price = $price;
@@ -20,6 +20,12 @@ class Guitar
         $this->type = $type;
         $this->backWood = $backWood;
         $this->topWood = $topWood;
+    }
+
+    public function __set(){
+    }
+
+    public function __get(){
     }
 
     function getSerialNumber()

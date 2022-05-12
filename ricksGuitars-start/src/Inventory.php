@@ -1,20 +1,12 @@
 <?php
-
 namespace Wouerner\RicksGuitars;
-
-// import java.util.Iterator;
-// import java.util.LinkedList;
-// import java.util.List;
-/* include_once('Guitar.php'); */
 
 use Wouerner\RicksGuitars\Guitar;
 
-class Inventory {
-  /* private List guitars; */
+final class Inventory {
   private array $guitars;
 
   public function __construct() {
-    /* guitars = new LinkedList(); */
       $guitars = [];
   }
 
@@ -40,10 +32,8 @@ class Inventory {
   }
 
   public function getGuitar(string $serialNumber) : Guitar {
-    /* for (Iterator $i = $this->guitars.iterator(); $i.hasNext(); ) { */
       foreach($this->guitars as $guitar){
-      /* $guitar = (Guitar)$i.next(); */
-      if ($guitar.getSerialNumber().equals($serialNumber)) {
+      if ($guitar->getSerialNumber() == $serialNumber) {
         return $guitar;
       }
     }
@@ -52,11 +42,8 @@ class Inventory {
 
   public function search(Guitar $searchGuitar) : Guitar {
       foreach ($this->guitars as $guitar) {
-          /* $guitar = (Guitar)i.next(); */
-          // Ignore serial number since that's unique
-          // Ignore price since that's unique
-
           $builder = $searchGuitar->getBuilder();
+
           if (
               $builder != null && 
               !$builder == "" && 

@@ -4,7 +4,7 @@ namespace Wouerner\RicksGuitars;
 
 use Wouerner\RicksGuitars\Inventory;
 
-class FindGuitarTester
+final class FindGuitarTester
 {
     public function main(array $args=[]) 
     {
